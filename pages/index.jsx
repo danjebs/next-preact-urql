@@ -14,8 +14,6 @@ const getStuff = `
 const Homepage = ({ headers }) => {
   const [result] = useQuery({ query: getStuff })
 
-  console.log('DBUG', result)
-
   return (
     <ul>
       {result && result.data && result.data.queryArtists && result.data.queryArtists.map((artist) => (

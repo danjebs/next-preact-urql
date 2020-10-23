@@ -1,5 +1,5 @@
 import React from 'react'
-import { Provider } from 'urql'
+import { Provider } from '@urql/preact'
 import { withUrqlClient } from 'next-urql'
 
 const App = ({ Component, pageProps, err, urqlClient }) => (

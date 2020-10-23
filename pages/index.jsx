@@ -1,4 +1,4 @@
-import { useQuery } from 'urql'
+import { useQuery } from '@urql/preact'
 
 const getStuff = `
   query {
@@ -10,7 +10,7 @@ const getStuff = `
   }
 `
 
-const Homepage = ({ headers }) => {
+const Homepage = () => {
   const [result] = useQuery({ query: getStuff })
 
   return (

@@ -1,5 +1,4 @@
 import { useQuery } from 'urql'
-import { withUrqlClient } from 'next-urql'
 
 const getStuff = `
   query {
@@ -25,12 +24,4 @@ const Homepage = ({ headers }) => {
   )
 }
 
-Homepage.getInitialProps = ({ req }) => {
-  const headers = req && req.headers && req.headers.cookie ? { Cookie: req.headers.cookie } : {}
-
-  return { headers }
-}
-
-export default withUrqlClient((ssrExchange, ctx) => ({
-  url: 'https://spotify-graphql-server.herokuapp.com/graphql',
-}))(Homepage)
+export default Homepage

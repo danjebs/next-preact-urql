@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from '@urql/preact'
-import { withUrqlClient } from 'next-urql'
+import withUrqlClient from '../lib/urql/withUrqlClient'
 
 const App = ({ Component, pageProps, err, urqlClient }) => (
   <Provider value={urqlClient}>
@@ -8,6 +8,4 @@ const App = ({ Component, pageProps, err, urqlClient }) => (
   </Provider>
 )
 
-export default withUrqlClient((ssrExchange, ctx) => ({
-  url: 'https://spotify-graphql-server.herokuapp.com/graphql',
-}))(App)
+export default withUrqlClient(App)
